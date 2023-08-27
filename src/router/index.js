@@ -1,26 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import MainPage from "@/pages/MainPage.vue";
+import MinesweeperGame from "@/pages/MinesweeperGame.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    component: MainPage
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
+    path: "/minesweeper-game",
+    component: MinesweeperGame
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes
 });
 
 export default router;
